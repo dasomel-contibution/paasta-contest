@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mariadb-pv
+  namespace: paas-6e6b72ef-db6a-4cf5-92d2-609952607eae-caas
+spec:
+  capacity:
+    storage: 10Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  hostPath:
+# 윈도우 사용시
+#    path: /D/data/mariadb
+    path: /bitnami/mariadb
+---
+#apiVersion: v1
+#kind: PersistentVolumeClaim
+#metadata:
+#  name: mariadb-pvc
+#spec:
+#  storageClassName: ""
+#  volumeName: mariadb-pv
+#  accessModes:
+#    - ReadWriteMany
+#  resources:
+#    requests:
+#      storage: 10Gi
