@@ -7,9 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="common-original" />
+        <module name="common-boot" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="common-boot" target="1.8" />
       <module name="common-original" target="1.8" />
     </bytecodeTargetLevel>
   </component>
