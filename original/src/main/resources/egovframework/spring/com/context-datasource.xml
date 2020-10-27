@@ -73,9 +73,12 @@
 	<beans profile="maria">
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="${Globals.maria.DriverClassName}"/>
-		<property name="url" value="${Globals.maria.Url}" />
-		<property name="username" value="${Globals.maria.UserName}"/>
+<!--		<property name="url" value="${Globals.maria.Url}" />-->
+		<property name="url" value="#{egovEnvCryptoService.getUrl()}" />
+<!--		<property name="username" value="${Globals.maria.UserName}"/>-->
+		<property name="username" value="#{egovEnvCryptoService.getUsername()}"/>
 		<property name="password" value="#{egovEnvCryptoService.getPassword()}"/>
+<!--		<property name="password" value="${Globals.maria.Password}"/>-->
 	</bean>
 	</beans>
 
