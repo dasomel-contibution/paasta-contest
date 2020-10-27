@@ -1,39 +1,28 @@
-apiVersion: v1
-kind: Service
-metadata:
-  name: mysql
-spec:
-  ports:
-    - port: 3306
-  selector:
-    app: mysql
-  clusterIP: None
----
-apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mysql
+  name: mariadb
+  labels:
+    app: mariadb
 spec:
+  replicas: 1
   selector:
     matchLabels:
-      app: mysql
-  strategy:
-    type: Recreate
+      app: mariadb
   template:
     metadata:
       labels:
-        app: mysql
+        app: mariadb
     spec:
       containers:
-        - image: mysql:5.6
-          name: mysql
+        - image: mariadb
+          name: mariadb
           env:
-            # Use secret in real usage
             - name: MYSQL_ROOT_PASSWORD
               value: password
           ports:
-            - containerPort: 3306
-              name: mysql
+            - name: mariadb
+              containerPort: 3306
 #          volumeMounts:
 #            - name: mysql-persistent-storage
 #              mountPath: /var/lib/mysql

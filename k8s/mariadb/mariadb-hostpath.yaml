@@ -12,18 +12,19 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   hostPath:
 # 윈도우 사용시
-#    path: /D/data/mariadb
-    path: /bitnami/mariadb
+    path: /D/data/mariadb
+# linux / mac 사용시
+#    path: /bitnami/mariadb
 ---
-#apiVersion: v1
-#kind: PersistentVolumeClaim
-#metadata:
-#  name: mariadb-pvc
-#spec:
-#  storageClassName: ""
-#  volumeName: mariadb-pv
-#  accessModes:
-#    - ReadWriteMany
-#  resources:
-#    requests:
-#      storage: 10Gi
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mariadb-pvc
+spec:
+  storageClassName: ""
+  volumeName: mariadb-pv
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 10Gi
