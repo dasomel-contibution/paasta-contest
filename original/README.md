@@ -11,3 +11,9 @@
 ## 4. 권한관리v3.9.0
     egovframework-authormanage-3.9.0.zip
     https://www.egovframe.go.kr/ims/reg/com/componentView.do?id=RGRQ_0000004297
+    
+# DB
+    mariadb
+# Dockerizing
+    - tomcat9
+    - openjdk8

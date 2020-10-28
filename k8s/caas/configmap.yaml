@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: common-map
+data:
+  egov_crypto_algorithmKey: 암호화키
+  egov_crypto_algorithmKeyHash: 암호화해시키
