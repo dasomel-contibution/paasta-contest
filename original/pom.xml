@@ -6,7 +6,7 @@
     <artifactId>common</artifactId>
     <packaging>war</packaging>
     <version>3.9.0</version>
-    <name>common component</name>
+    <name>common-original</name>
     <url>http://maven.apache.org</url>
 
     <licenses>
