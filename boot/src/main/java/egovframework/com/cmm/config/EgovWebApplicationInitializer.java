@@ -49,7 +49,8 @@ import egovframework.com.uat.uap.filter.EgovLoginPolicyFilter;
  */
 
 
-public class EgovWebApplicationInitializer extends SpringBootServletInitializer {
+//public class EgovWebApplicationInitializer extends SpringBootServletInitializer {
+public class EgovWebApplicationInitializer implements WebApplicationInitializer {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(EgovWebApplicationInitializer.class);
 	@Override

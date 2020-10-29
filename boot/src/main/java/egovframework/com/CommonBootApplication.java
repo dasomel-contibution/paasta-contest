@@ -4,6 +4,7 @@ import egovframework.com.cmm.config.EgovWebApplicationInitializer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
@@ -12,7 +13,8 @@ import org.springframework.context.annotation.ImportResource;
 import org.springframework.security.web.firewall.HttpFirewall;
 import org.springframework.security.web.firewall.StrictHttpFirewall;
 
-@SpringBootApplication(exclude={DataSourceAutoConfiguration.class}, scanBasePackageClasses = CommonBootApplication.class)
+@SpringBootApplication(exclude={DataSourceAutoConfiguration.class, SecurityAutoConfiguration.class}
+            , scanBasePackageClasses = CommonBootApplication.class)
 @ImportResource({"classpath:/egovframework/spring/com/**/context-*.xml"
 				,"classpath:/egovframework/spring/mvc/egov-com-*.xml"})
 //@Import(EgovWebApplicationInitializer.class)

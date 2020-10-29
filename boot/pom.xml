@@ -6,7 +6,7 @@
     <artifactId>common-boot</artifactId>
     <packaging>war</packaging>
     <version>3.9.0</version>
-    <name>common component</name>
+    <name>common-boot</name>
     <url>http://maven.apache.org</url>
 
     <licenses>
@@ -73,7 +73,16 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
@@ -186,7 +195,7 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
-            <version>1.2</version>
+<!--            <version>1.2</version>-->
         </dependency>
 
         <dependency>
@@ -606,6 +615,16 @@
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>repackage</goal>
+                            </goals>
+                            <configuration>
+                                <mainClass>egovframework.com.CommonBootApplication</mainClass>
+                            </configuration>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.tomcat.maven</groupId>
