@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: common-original
+  labels:
+    app: common-original
+spec:
+  replicas: 1
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: common-original
+  template:
+    metadata:
+      labels:
+        app: common-original
+    spec:
+      containers:
+        - name: common-original
+          image: dasomel/common-original-jwt1:1.0
+          env:
+          - name: JAVA_OPTS
+            value: "-Degov.crypto.algorithmKey=${EGOV_CRYPTO_ALGORITHMKEY} -Degov.crypto.algorithmKeyHash=${EGOV_CRYPTO_ALGORITHMKEYHASH}"
+          - name: EGOV_CRYPTO_ALGORITHMKEY
+            valueFrom:
+              configMapKeyRef:
+                name: common-map
+                key: egov_crypto_algorithmKey
+          - name: EGOV_CRYPTO_ALGORITHMKEYHASH
+            valueFrom:
+              configMapKeyRef:
+                name: common-map
+                key: egov_crypto_algorithmKeyHash
+          ports:
+            - containerPort: 8080
+          imagePullPolicy: Always
+          resources:
+            requests:
+              cpu: 0.5
+              memory: 0.5Gi
+            limits:
+              cpu: 0.5
+              memory: 0.5Gi
