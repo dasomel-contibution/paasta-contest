@@ -8,3 +8,10 @@
 # 2. private registry
     docker pull registry
     docker run -dit --name docker-registry -p 5000:5000 registry
+    
+# 3. keycloak
+    https://github.com/codecentric/helm-charts
+    helm repo add codecentric https://codecentric.github.io/helm-charts
+    
+    helm install keycloak --set service.type=nodePort,service.httpNodePort=31000 codecentric/keycloak
+    
