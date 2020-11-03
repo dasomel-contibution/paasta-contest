@@ -6,10 +6,21 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: passta-contest.io
+    - host: passta-contest-common.io
       http:
         paths:
           - path: /
+            backend:
+              serviceName: common-original
+              servicePort: 8080
+    - host: passta-contest-jwt.io
+      http:
+        paths:
+          - path: /jwt1
+            backend:
+              serviceName: common-original-jwt1
+              servicePort: 8080
+          - path: /jwt2
             backend:
               serviceName: common-original-jwt2
               servicePort: 8080

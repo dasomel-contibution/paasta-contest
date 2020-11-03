@@ -15,3 +15,4 @@
     
     helm install keycloak --set service.type=nodePort,service.httpNodePort=31000 codecentric/keycloak
     
+# 4. ingress controller
