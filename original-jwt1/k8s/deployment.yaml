@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: common-original
+  name: common-original-jwt1
   labels:
-    app: common-original
+    app: common-original-jwt1
 spec:
   replicas: 1
   revisionHistoryLimit: 1
   selector:
     matchLabels:
-      app: common-original
+      app: common-original-jwt1
   template:
     metadata:
       labels:
-        app: common-original
+        app: common-original-jwt1
     spec:
       containers:
-        - name: common-original
+        - name: common-original-jwt1
           image: dasomel/common-original-jwt1:1.0
           env:
           - name: JAVA_OPTS
