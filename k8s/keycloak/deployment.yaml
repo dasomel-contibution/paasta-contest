@@ -1,0 +1,70 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: keycloak
+  labels:
+    app: keycloak
+spec:
+  ports:
+    - name: http
+      port: 8080
+      targetPort: 8080
+      nodePort: 30002
+  selector:
+    app: keycloak
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: keycloak
+  labels:
+    app: keycloak
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: keycloak
+  template:
+    metadata:
+      labels:
+        app: keycloak
+    spec:
+      containers:
+        - name: keycloak
+          image: quay.io/keycloak/keycloak:11.0.3
+          env:
+            - name: KEYCLOAK_USER
+              value: "아이디"
+            - name: KEYCLOAK_PASSWORD
+              value: "패스워드"
+            - name: PROXY_ADDRESS_FORWARDING
+              value: "false"
+            - name: DB_VENDOR
+              value: "mariadb"
+            - name: DB_ADDR
+              value: "주소"
+            - name: DB_PORT
+              value: "포트"
+            - name: DB_DATABASE
+              value: "keycloak"
+            - name: DB_USER
+              value: "디비아이디"
+            - name: DB_PASSWORD
+              value: "디비비밀번호"
+          ports:
+            - name: http
+              containerPort: 8080
+            - name: https
+              containerPort: 8443
+          readinessProbe:
+            httpGet:
+              path: /auth/realms/master
+              port: 8080
+          resources:
+            requests:
+              cpu: 1
+              memory: 1Gi
+            limits:
+              cpu: 1
+              memory: 1Gi
