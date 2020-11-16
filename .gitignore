@@ -627,3 +627,4 @@ fabric.properties
 
 # sonarlint
 .idea/sonarlint/**
+/sample-boot2/
