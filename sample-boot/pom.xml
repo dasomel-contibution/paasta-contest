@@ -5,7 +5,7 @@
     <groupId>egov</groupId>
 	<artifactId>sample-boot</artifactId>
 	<packaging>war</packaging>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<name>sample-boot</name>
 	<url>http://www.egovframe.go.kr</url>
 
@@ -20,6 +20,10 @@
 	    <spring.maven.artifact.version>4.3.22.RELEASE</spring.maven.artifact.version>
 		<egovframework.rte.version>3.9.0</egovframework.rte.version>
 		<selenium.version>3.141.59</selenium.version>
+        <jkube.build.strategy>jib</jkube.build.strategy>
+        <jkube.debug.enabled>true</jkube.debug.enabled>
+        <timestamp>${maven.build.timestamp}</timestamp>
+        <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
 	</properties>
 	
 	<parent>
@@ -243,13 +247,51 @@
 	<build>
         <defaultGoal>install</defaultGoal>
         <directory>${basedir}/target</directory>
-        <finalName>${artifactId}-${version}</finalName>
+        <finalName>${project.artifactId}-${project.version}</finalName>
         <pluginManagement>
             <plugins>
             	<plugin>
 		            <groupId>org.springframework.boot</groupId>
 		            <artifactId>spring-boot-maven-plugin</artifactId>
 		        </plugin>
+                <plugin>
+                    <groupId>org.eclipse.jkube</groupId>
+                    <artifactId>kubernetes-maven-plugin</artifactId>
+                    <version>1.0.2</version>
+                    <configuration>
+                        <images>
+                            <image>
+                                <name>dasomel/egov-sampleboot:${timestamp}</name>
+                                <build>
+                                    <from>fabric8/java-centos-openjdk8-jre</from>
+                                    <maintainer>dasomell@gmail.com</maintainer>
+                                    <assembly>
+                                        <inline>
+                                            <baseDirectory>/deployments</baseDirectory>
+                                        </inline>
+                                        <mode>dir</mode>
+                                        <targetDir>/deployments</targetDir>
+                                    </assembly>
+                                    <env>
+                                        <JAVA_LIB_DIR>/deployments</JAVA_LIB_DIR>
+                                        <CATALINA_OPTS>-Djava.security.egd=file:/dev/urandom</CATALINA_OPTS>
+                                    </env>
+                                </build>
+                            </image>
+                        </images>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>jkube</id>
+                            <goals>
+                                <goal>resource</goal>
+                                <goal>build</goal>
+                                <goal>push</goal>
+                                <goal>deploy</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
                 <plugin>
 	                <groupId>org.apache.tomcat.maven</groupId>
 	                <artifactId>tomcat7-maven-plugin</artifactId>
