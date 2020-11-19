@@ -27,7 +27,7 @@
         spec:
           containers:
             - name: egov-sample
-              image: dasomel/egov-sample:1.0
+              image: dasomel/egov-sample:1.1
               ports:
                 - containerPort: 8080
               imagePullPolicy: Always
@@ -55,10 +55,10 @@
 ## 4. Complie & package
     mvn clean package
 ## 5. Dockerizing & push
-    docker build . -t dasomel/egov-sample:1.0
-    docker push dasomel/egov-sample:1.0
+    docker build . -t dasomel/egov-sample:1.1
+    docker push dasomel/egov-sample:1.1
 ## 6. deploy kubernetes
     kubectl apply -f ./k8s/deployment.yaml
     kubectl apply -f ./k8s/service.yaml
 ## 7. Confirm
-   http://아이피:30100/sample 
+   http://아이피:30100/sample/egovSampleList.do
