@@ -4736,8 +4736,6 @@ t
 Dsample-boot/src/main/resources/egovframework/validator/validator.xml,a/4/a42e73b96964dc3b4c36503d392d2cb79b9c37e7
 z
 Jsample-boot/src/main/resources/egovframework/validator/validator-rules.xml,6/6/66b2ee8e81d65d6f77c58e7baaff8b61a0a0a076
-V
-&sample-boot2/.gradle/6.5/gc.properties,f/3/f335e931c29eeeaf5d520b5c80b17c07b16a36fb
 h
 8sample-boot2/.gradle/buildOutputCleanup/cache.properties,3/3/33f2d6836fd741a7c65c0588612fd9774e5bae27
 X
@@ -4910,3 +4908,17 @@ E
 sample-boot/README.md,1/9/19e396db7217c9201088f011210a1535e905f546
 q
 Asample-boot/src/main/java/egovframework/example/WebMvcConfig.java,b/0/b0fc4f14b94e975a5110d52d24288729ac84f3e1
+`
+0sample-boot/.settings/org.eclipse.jdt.core.prefs,a/0/a0dcb0c11a88cd69dc369b4a7f03fee52fd52742
+f
+6sample-boot/.settings/org.eclipse.wst.validation.prefs,9/f/9f18934e205809c7a905760535a7e7a681f2b0b3
+Y
+)sample-boot/src/main/jkube/deployment.yml,f/3/f36b52acaf84394a56d38cab4ad613b227011c56
+}
+Msample-boot/src/main/resources/egovframework/springmvc/dispatcher-servlet.xml,7/4/74b8c9ed75a06e5fb6f5ce45dff7bddcdcebdaef
+M
+sample-boot2/k8s/service.yaml,8/9/890b09e3dee3b7bf624d348bf599979f0eadcbc2
+F
+sample-boot2/README.md,f/b/fbc93c9edfbf4758ecdd5fc9212f36e270d4fa81
+P
+ sample-boot2/k8s/deployment.yaml,1/f/1f04aaa391c226716ea543ebfb7320d09df40e52
