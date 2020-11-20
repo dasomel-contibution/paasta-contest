@@ -3,6 +3,7 @@
 <%@ taglib prefix="form"   uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="ui"     uri="http://egovframework.gov/ctl/ui"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ page import="java.net.InetAddress" %>
 <%
   /**
   * @Class Name : egovSampleList.jsp
@@ -88,6 +89,8 @@
         	        </li>
                 </ul>
         	</div>
+                 <%=request.getLocalAddr()%>
+                 <%=request.getLocalName()%>
         	<!-- List -->
         	<div id="table">
         		<table width="100%" border="0" cellpadding="0" cellspacing="0" summary="카테고리ID, 케테고리명, 사용여부, Description, 등록자 표시하는 테이블">
