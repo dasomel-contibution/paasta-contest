@@ -634,3 +634,11 @@ fabric.properties
 /sample-boot2/.gradle/**
 /sample-boot2-keycloak/build/**
 /sample-boot2-keycloak/.gradle/**
+sample-boot/src/main/webapp/WEB-INF/lib/
+sample-boot/src/test/resources/
+sample-boot2-keycloak/src/main/webapp/WEB-INF/lib/
+sample-boot2-keycloak/src/test/resources/
+sample-boot2/src/main/webapp/WEB-INF/lib/
+sample-boot2/src/test/resources/
+sample/src/main/webapp/WEB-INF/lib/
+sample/src/test/
