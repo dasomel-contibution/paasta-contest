@@ -1,4 +1,5 @@
-# 표준프레임워크 샘플 프로젝트
+Paas-Ta 배포
+=
 ## 1. kubernetes-maven-plugin 설정(pom.xml)
     <plugin>
         <groupId>org.eclipse.jkube</groupId>
@@ -55,4 +56,36 @@
 ## 3. build & deploy 
     mvn clean package spring-boot:repackage k8s:build k8s:resource k8s:push k8s:apply
 ## 4. Confirm
-   http://아이피:30101/egovSampleList.do
+   http://아이피:30101/maven/egovSampleList.do
+   
+Local 배포
+=
+## 1. local-ingress.yaml
+##### kubectl apply -f ./k8s/local-ingress.yaml
+    apiVersion: networking.k8s.io/v1beta1
+    kind: Ingress
+    metadata:
+      name: opdc-ingress
+    spec:
+      rules:
+        - host: sample.io
+          http:
+            paths:
+              - path: /sample
+                backend:
+                  serviceName: egov-sample
+                  servicePort: 8080
+              - path: /maven
+                backend:
+                  serviceName: sample-boot
+                  servicePort: 8080
+        - host: sample2.io
+          http:
+            paths:
+              - path: /gradle
+                backend:
+                  serviceName: sample-boot2
+                  servicePort: 8080
+## 2. Confirm
+    http://127.0.0.1:30101/maven/egovSampleList.do
+    http://sample.io/maven/egovSampleList.do

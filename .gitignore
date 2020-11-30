@@ -627,4 +627,10 @@ fabric.properties
 
 # sonarlint
 .idea/sonarlint/**
-/sample-boot2/
+
+**/target/*
+
+/sample-boot2/build/**
+/sample-boot2/.gradle/**
+/sample-boot2-keycloak/build/**
+/sample-boot2-keycloak/.gradle/**

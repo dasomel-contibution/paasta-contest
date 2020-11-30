@@ -1,4 +1,5 @@
-# 표준프레임워크 샘플 프로젝 
+Paas-Ta 배포
+=
 ## 1. Dockerfile 생성
     FROM tomcat:9.0.39-jdk8-openjdk-buster
     LABEL maintainer=<dasomell@gmail.com>
@@ -38,7 +39,7 @@
                 limits:
                   cpu: 0.5
                   memory: 0.5Gi
-## 3. service,yml
+## 3. service.yaml
     apiVersion: v1
     kind: Service
     metadata:
@@ -62,3 +63,35 @@
     kubectl apply -f ./k8s/service.yaml
 ## 7. Confirm
    http://아이피:30100/sample/egovSampleList.do
+   
+Local 배포
+=
+## 1. local-ingress.yaml
+##### kubectl apply -f ./k8s/local-ingress.yaml
+    apiVersion: networking.k8s.io/v1beta1
+    kind: Ingress
+    metadata:
+      name: opdc-ingress
+    spec:
+      rules:
+        - host: sample.io
+          http:
+            paths:
+              - path: /sample
+                backend:
+                  serviceName: egov-sample
+                  servicePort: 8080
+              - path: /maven
+                backend:
+                  serviceName: sample-boot
+                  servicePort: 8080
+        - host: sample2.io
+          http:
+            paths:
+              - path: /gradle
+                backend:
+                  serviceName: sample-boot2
+                  servicePort: 8080
+## 2. Confirm
+    http://127.0.0.1:30100/sample/egovSampleList.do
+    http://sample.io/sample/egovSampleList.do
