@@ -4,12 +4,8 @@
     <bytecodeTargetLevel>
       <module name="egov.spring-boot2.main" target="1.8" />
       <module name="egov.spring-boot2.test" target="1.8" />
-      <module name="sample-boot2-keycloak.main" target="1.8" />
       <module name="sample-boot2-keycloak.sample-boot2.main" target="1.8" />
       <module name="sample-boot2-keycloak.sample-boot2.test" target="1.8" />
-      <module name="sample-boot2-keycloak.test" target="1.8" />
-      <module name="sample-boot2.main" target="1.8" />
-      <module name="sample-boot2.test" target="1.8" />
       <module name="spring-boot2" target="1.8" />
       <module name="spring-boot2.main" target="1.8" />
       <module name="spring-boot2.test" target="1.8" />

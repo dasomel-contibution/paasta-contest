@@ -1,21 +1,24 @@
-spring:
-  main:
-    allow-bean-definition-overriding: true
-
-server:
-  port: 30103
-  servlet:
-    context-path: /
+#spring:
+#  main:
+#    allow-bean-definition-overriding: true
 
 keycloak:
-  realm: localRealm
-  auth-server-url: http://www.example.com/auth
+  realm: sample
+  auth-server-url: http://keycloak/auth
   ssl-required: external
-  resource: local-app
-  verify-token-audience: true
+  resource: sample-client
+#  verify-token-audience: true
   #  public-client: true
-  principal-attribute: preferred_username
+#  principal-attribute: preferred_username
   credentials:
-    secret: 80c2693f-e6b0-4489-87d3-cff8bb90ab8f
+    secret: 1bb9b327-d325-4714-aa71-83fc060b46d5
   use-resource-role-mappings: true
-  confidential-port: 0
+  securityConstraints:
+    - authRoles: user
+      securityCollections:
+        - name: protected
+        - patterns:
+            - /*
+  policy-enforcer-config:
+    enforcement-mode: ENFORCING
+    on-deny-redirect-to: accessDenied
