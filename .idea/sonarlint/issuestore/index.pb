@@ -2224,8 +2224,6 @@ a
 1original/src/test/java/EgovEnvCryptoUserTest.java,9/2/92068e187500a74bbbc224f72a21cf9b8e906e80
 l
 <original/src/test/java/EgovEnvCryptoAlgorithmCreateTest.java,4/2/42471c37332a32110d19b6a657334538b41bbf4b
-v
-Foriginal/src/main/resources/egovframework/egovProps/globals.properties,8/c/8c4d9522573b9a564430280e1b425ea4a343c99c
 c
 3original/src/test/resources/context-crypto-test.xml,4/1/4130fe2a8cb3e3a36e3b58b3b458bd22a5b4e69f
 f
@@ -4472,8 +4470,6 @@ h
 -boot/src/test/java/EgovEnvCryptoUserTest.java,6/8/68d520e96490012a549530d07575b3939bea83fe
 _
 /boot/src/test/resources/context-crypto-test.xml,7/4/74037a48344c896f3bc44ccb822ead7dd09bdbb8
-D
-boot/common-boot.iml,8/2/8262e37f565aa4996466842e4f4be9ca90d62b0e
 H
 boot/common-original.iml,a/3/a366e4d389e4bd31b08ae59f33dff56d3831df41
 <
@@ -4516,20 +4512,14 @@ N
 original-jwt2/k8s/service.yaml,3/f/3f3fcde7937ad8b0cf37890390adce53ccee7718
 F
 original-jwt2/build.sh,7/5/75075360fcbb9122e557485f9ba93c95992d90ea
-M
-original-jwt2/common-jwt2.iml,0/1/010975a08c03fc676a4e278825aee93735196c6d
 ˆ
 Xoriginal-jwt1/src/main/resources/egovframework/message/com/uss/umt/message_ko.properties,0/7/07f71220784d9108b390dc9d59116e965ebd2ee5
-M
-original-jwt1/common-jwt1.iml,6/0/609537d87557de459a063c3ba11715503422e464
 L
 k8s/keycloak/deployment.yaml,d/c/dcf59ca8939e2355aa6b270942f8dc70bf3a6b00
 H
 original-jwt1/Dockerfile,2/a/2a96ffd662b84362f5d8a5780f96162d1460da05
 H
 original-jwt2/Dockerfile,9/f/9f54abeb600406331f490cd5db5efa32bcbf95b2
-A
-sample/sample.iml,b/c/bcc79b088a4c700ecfabdd1cbc1510eaaff8687b
 
 Osample/src/main/java/egovframework/example/cmmn/web/EgovBindingInitializer.java,6/c/6c1aeb26bf0fb4de655a5b37b81d040dec628683
 ‰
@@ -4720,8 +4710,6 @@ F
 sample-boot/.classpath,0/2/027c74bcc5e77d89e8314c413b3f1fbfe6bca164
 D
 sample-boot/.project,0/5/0588609e97fc19bf30d6c2e52f7cffc26c51e59a
-K
-sample-boot/sample-boot.iml,1/2/12e16e4366b88c0abc18c0e882d8dd55e0f0b5dc
 \
 ,sample-boot2/src/main/webapp/WEB-INF/web.xml,5/3/5396fdf6af86aa6d0fd33219a8976fe06c8de6d3
 I
@@ -4940,8 +4928,6 @@ W
 ,.idea/modules/sample-boot2-keycloak.test.iml,5/1/516ea8c8b8e900fe5768b375c64c75568863fed5
 M
 sample/k8s/local-ingress.yaml,d/7/d71a25b0c44e79e6b8f366dbe8229921340fe3ae
-e
-5sample-boot/src/main/resources/application.properties,2/b/2b4b15b4038d72f437c9e6c3449a864271161220
 f
 6sample-boot2/src/main/resources/application.properties,f/f/ff9b112850819a68fbb794085121d3e93a3722b0
 a
@@ -5058,8 +5044,6 @@ Xsample-boot2-keycloak/src/main/resources/egovframework/sqlmap/example/sql-map-c
 Nsample-boot2-keycloak/src/main/resources/egovframework/validator/validator.xml,c/b/cb4a8dc0ca199a5cc2d15777217d1fd1ceb0df95
 „
 Tsample-boot2-keycloak/src/main/resources/egovframework/validator/validator-rules.xml,f/8/f875c7f8ac86d05bf2993c1b8505d7c6d84724c2
-c
-3sample-boot2-keycloak/src/main/resources/log4j2.xml,9/8/9837cba76b8c65b25080a8fc26fe36039454401a
 f
 6sample-boot2-keycloak/src/main/webapp/common/error.jsp,e/9/e9c3cc970d8ad23f83640e9b32d4d8b73b120258
 r
@@ -5104,3 +5088,7 @@ S
 fsample-boot2-keycloak/src/main/java/egovframework/example/config/KeycloakWebSecurityContextConfig.java,4/3/434490d1b7774f706af919dc876e0f237b709227
 –
 fsample-boot2-keycloak/src/main/java/egovframework/example/config/SpringBootKeycloakConfigResolver.java,2/9/298a64e80da4e72624a838d0f86d23082b193cf0
+I
+k8s/postgres/install.yaml,7/e/7e36cb9388ed8e23ecfcb831a5093c2d6e2ae1f3
+S
+#k8s/keycloak/local-deployment1.yaml,8/b/8b787ac82946de8dd8ab6c6b39bbea794e4df6a1
